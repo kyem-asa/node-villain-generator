@@ -68,30 +68,28 @@ const dataset = {
 };
 
 const server = http.createServer((req, res) => {
-  const page = req.url;
-
-  console.log(page);
-  if (page == "/") {
+  console.log(req.url);
+  if (req.url == "/") {
     fs.readFile("index.html", function (err, data) {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(data);
       res.end();
     });
-   } else if (page == "/api") {
+   } else if (req.url == "/api") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(dataset));
-  } else if (page == "/css/style.css") {
+  } else if (req.url == "/css/style.css") {
     fs.readFile("css/style.css", function (err, data) {
       res.write(data);
       res.end();
     });
-  } else if (page == "/js/main.js") {
+  } else if (req.url == "/js/main.js") {
     fs.readFile("js/main.js", function (err, data) {
       res.writeHead(200, { "Content-Type": "text/javascript" });
       res.write(data);
       res.end();
     });
-  } 
+  }  
   
 
 });
