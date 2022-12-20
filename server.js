@@ -3,6 +3,8 @@ const fs = require("fs");
 const url = require("url");
 const PORT = process.env.PORT || 3000
 
+
+
 const dataset = {
   locations: [
     "a roller skating rink",
@@ -66,7 +68,7 @@ const dataset = {
 };
 
 const server = http.createServer((req, res) => {
-  const page = url.parse(req.url).pathname;
+  const page = req.url;
 
   console.log(page);
   if (page == "/") {
@@ -75,7 +77,7 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-   } else if (page == "https://villain-origin-generator.up.railway.app/api") {
+   } else if (page == "/api") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(dataset));
   } else if (page == "/css/style.css") {
