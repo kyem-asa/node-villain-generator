@@ -90,8 +90,8 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   } else {
-    res.writeHead(404, { "Content-Type": "text/html" });
-    res.end("<p>404 not found</p>");
+    res.writeHead(404, { 'Content-Type': 'application/json' })
+    res.end( JSON.stringify({message: '404 not found'}))
   }
 });
 
