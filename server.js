@@ -89,10 +89,9 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  } else {
-    res.writeHead(404, { 'Content-Type': 'application/json' })
-    res.end( JSON.stringify({message: '404 not found'}))
-  }
+  } 
+  
+
 });
 
 server.listen(PORT);
