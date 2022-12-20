@@ -77,7 +77,7 @@ const server = http.createServer((req, res) => {
     });
    } else if (req.url == "/api") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(dataset));
+    res.end((dataset));
   } else if (req.url == "/css/style.css") {
     fs.readFile("css/style.css", function (err, data) {
       res.write(data);
