@@ -2,7 +2,7 @@ document.querySelector('#submit').addEventListener('click', makeReq)
 
 async function makeReq(){
 
-  const res = await fetch(`https://villain-origin-generator.up.railway.app/api`)
+  const res = await fetch(`/api`)
   const data = await res.json()
 
   console.log(data);
