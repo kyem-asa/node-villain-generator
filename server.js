@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-   } else if (page == "/api") {
+   } else if (page == "https://villain-origin-generator.up.railway.app/api") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(dataset));
   } else if (page == "/css/style.css") {
